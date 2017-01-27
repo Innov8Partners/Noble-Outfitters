@@ -1,0 +1,149 @@
+.wrapper, .wrapper-two {
+    @include transform(translate(0, 0));
+    @include transition(transform 0.3s ease);
+    width: 100%
+}
+.wrapper {
+    .hero {
+        margin-bottom: 22px
+    }
+    .box {
+        @include transition(height 0.7s ease);
+        @include transition(scale 0.2s ease-in-out);
+        width: 100%;
+        margin-bottom: 11px
+    }
+    img {
+        width: 100%;
+    }
+}
+
+@media(min-width:$mobile-wide) {
+    .wrapper .wrapper-two {
+        width: calc(50% - 11px);
+        margin-left: 11px;
+        float: left
+    }
+    .wrapper {
+        .hero {
+            padding-bottom: 0;
+            margin-top: 1px;
+            margin-bottom: 22px
+        }
+
+        .box {
+            &.large-left, &.small-right1, &.small-right2, &.large-right {
+                padding-bottom: 0;
+                height: auto;
+                float: left
+            }
+            &.large-left {
+                width: calc(50% - 11px);
+                margin-right: 11px
+            }
+            &.small-right1, &.small-right2 {
+                width: calc(50% - 11px);
+                margin-bottom: 11px
+            }
+            &.small-right1 {
+                margin-right: 11px
+            }
+            &.small-right2 {
+                margin-left: 11px
+            }
+            &.large-right {
+                width: 100%;
+                margin-top: 0
+            }
+        }
+    }
+}
+
+@media(min-width:$laptop) {
+    .wrapper {
+        .hero {
+            margin-top: 2px
+        }
+        .box.large-right {
+            margin-top: 11px
+        }
+    }
+}
+
+@media(min-width:$wrapper) {
+    .wrapper {
+        width: $wrapper;
+        margin-left: auto;
+        margin-right: auto
+    }
+}
+
+.section-title-lined {
+    position: relative;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: -10px;
+    h2 {
+        position: relative;
+        font-size: 1.25em;
+        z-index: 1;
+        overflow: hidden;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 0px 22px;
+        margin: 11px;
+        &:before, &:after {
+            position: absolute;
+            top: 51%;
+            overflow:hidden;
+            width:50%;
+            height:1px;
+            content: '\a0';
+            background-color: #cec0a1;
+            z-index: 0;
+        }
+        &:before {
+            margin-left: -52%;
+            text-align: right;
+        }
+        &:after {
+            margin-left:2%;
+        }
+    }
+    a {
+        span {
+            text-decoration: none;
+            color:#47443d;
+        }
+    }
+}
+
+.instagram-explainer {
+    font-family: "myriad-pro-condensed",sans-serif;
+    color: #333;
+    line-height:1.1;
+    font-weight:500;
+    font-size:18px;
+    text-align:center;
+    padding:5px 5px 0;
+}
+
+.partners {
+    margin:auto;
+    text-align:center;
+    display: none;
+    @media(min-width:$wrapper) {
+        display: block;
+    }
+    ul {
+        list-style: none;
+        display: block;
+        li {
+            display: inline-block;
+            margin: 0px 12px 10px;
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
