@@ -98,6 +98,7 @@ header {
     }
     .header-right {
         text-align: right;
+        position: relative;
     }
     .header-center {
         width: 30%;
@@ -485,10 +486,28 @@ header {
     }
 }
 
-@media(min-width:800px) {
+@media(min-width:$laptop) {
     .drop-down-indicator:after {
         content: " \02C7"
     }
+    .wide-hide {
+        display:none;
+    }
+    .wide-show {
+        display:inline;
+    }
+}
+
+@media (max-width:$laptop) {
+    .wide-hide {
+        display:inline;
+    }
+    .wide-show {
+        display:none;
+    }
+}
+
+@media(min-width:800px) {
     #flag {
         margin: 0 !important
     }
@@ -503,7 +522,11 @@ header {
     }
     nav ul .main-nav-menu {
         width: 80%;
-        left: 10%
+        left: 4%;
+        &.right {
+            right: -2%;
+        }
+
     }
 }
 

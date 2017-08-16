@@ -1,0 +1,22 @@
+.mc-blog {
+    .mc-header .mc-grid .mc-sub div {
+        line-height: 20px;
+        margin-top: 10px;
+    }
+    .mc-header .mc-grid .mc-sub .mc-sub-thumb {
+        height: auto;
+    }
+    .mc-grid {
+        min-height: 0;
+        .mc-product .mc-sub-thumb,
+        .mc-sub .mc-sub-thumb {
+            line-height: 1;
+        }
+    }
+    .mc-sub-thumb > img {
+        margin-bottom: 10px;
+    }
+    .articles .full {
+        width: 100%;
+    }
+}

@@ -1,0 +1,137 @@
+ul.quantity {
+    height: 31px;
+    display: block;
+    list-style: none;
+    padding: 0;
+    li {
+        float: left;
+        margin: 0 0 0 -1px;
+        position: relative;
+        a {
+            border: 1px solid $border-grey;
+            border-radius: 1px;
+            display: block;
+            height: 31px;
+            width: 31px;
+            cursor: pointer;
+            &.plus {
+                background: url(html_templates/images/btn_qty_plus.gif) center center no-repeat;
+                background:url(#{'{{ "btn_qty_plus.gif" | asset_url }}'}) center center no-repeat
+            }
+            &.minus {
+                background: url(html_templates/images/btn_qty_minus.gif) center center no-repeat;
+                background:url(#{'{{ "btn_qty_minus.gif" | asset_url }}'}) center center no-repeat;
+            }
+        }
+        input {
+            border: 1px solid $border-grey;
+            color: $text-mid-grey;
+            font-family: $futura-medium;
+            font-size: 14px;
+            height: 31px;
+            left: 0;
+            line-height: normal;
+            margin: 0;
+            padding: 2px;
+            position: relative;
+            right: 0;
+            text-align: center;
+            top: 0;
+            width: 58px;
+            background: $white;
+        }
+    }
+}
+
+.btn {
+    line-height: 34px;
+    border-radius: 0;
+    background: #c6aa76;
+    color: white;
+    text-transform: uppercase;
+    display: block;
+    //border-bottom: 4px solid #a1865b;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    &:hover {
+        color: white;
+    }
+    &.disabled {
+        cursor: pointer;
+        opacity: 1;
+    }
+    &.active.focus,
+    &.active:focus,
+    &.focus,
+    &:active.focus,
+    &:active:focus,
+    &:focus {
+        outline: none;
+        color: white;
+    }
+}
+
+
+.tooltip_block {
+    background: $white;
+    border: 2px solid $light-blue;
+    float: left;
+    margin-bottom: 3%;
+    margin-top: -7px;
+    position: relative;
+    display: none;
+    &.add_tooltip {
+        &:after, &:before {
+            left: 55%;
+        }
+    }
+    &:after, &:before {
+        border: medium solid transparent;
+        bottom: 100%;
+        content: " ";
+        height: 0;
+        left: 40px;
+        pointer-events: none;
+        position: absolute;
+        width: 0;
+
+    }
+    &:before {
+        border-bottom-color: $light-blue;
+        border-width: 11px;
+        margin-left: -33px
+    }
+    &:after {
+        border-color: rgba(136,183,213,0) rgba(136,183,213,0) #fff;
+        border-width: 8px;
+        font-size: 12px;
+        margin-left: -30px
+    }
+    .tooltip {
+        color: $text-mid-grey;
+        font-family: $futura-medium;
+        font-size: 12px;
+        line-height: 20px;
+        padding: 2px 10px;
+        position: relative;
+        opacity: 1;
+    }
+    &.add_tooltip {
+        width: 100%;
+        margin-top: 13px;
+        max-width: 200px;
+    }
+}

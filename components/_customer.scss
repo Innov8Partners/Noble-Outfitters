@@ -1,194 +1,1035 @@
-#customer-wrapper {
-    width: 95%;
+/*****************************************
+ * START OF CUSTOMER ACCOUNT PAGES
+******************************************/
+main.customer {
+    position: relative;
+    max-width: 1200px;
+    width: 98%;
     margin: 0 auto;
-    h1 a {
-        color: $text-black;
-        &:hover {
-            text-decoration: none
+    padding-bottom: 80px;
+
+
+    ul.tab {
+        margin: 24px auto 5px;
+        text-transform: uppercase;
+        border-bottom: 1px solid $text-light-grey;
+        height: 45px;
+        width: 100%;
+        list-style: none;
+        padding: 0;
+        li {
+            float: left;
+            margin-left: 5%;
+
+            > a {
+                color: $text-light-grey;
+                font: 19px/44px $futura-heavy;
+                display: block;
+                position: relative;
+
+                &.active {
+                    //border-bottom: 4px solid $text-dark-grey;
+                    color: $text-dark-grey;
+
+                    &:after {
+                        content: "";
+                        display: block;
+                        width: 0;
+                        height: 0;
+                        border-left: 16px solid transparent;
+                        border-right: 16px solid transparent;
+                        border-top: 16px solid $text-dark-grey;
+                        position: absolute;
+                        left: 50%;
+                        margin-left: -16px;
+                    }
+                }
+
+                &:hover {
+                    color: $hover-blue;
+                    text-decoration: none;
+                }
+            }
+        }
+
+    }
+
+    .tab-content {
+        margin: 0 auto;
+        clear: both;
+        width: 100%;
+    }
+
+    #account {
+        .btn-div {
+            padding: 15px 0 20px 0;
+
+            .btn {
+                color: $white;
+                width: 16.67%;
+                min-width: 140px;
+                display: block;
+                margin-left: auto;
+            }
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+
+            .info_block {
+                width: 100%;
+                float: left;
+                padding: 56px 20px 20px;
+                position: relative;
+                color: $text-dark-grey;
+                border: 1px solid #f8f4ed;
+
+                &:nth-of-type(2), &:nth-of-type(3) {
+                    margin-top: 20px;
+                }
+
+                h3 {
+                    font: 18px/1 $futura-heavy;
+                    background: #f8f4ed;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    padding: 15px 20px;
+                    border-bottom: 2px solid $white;
+                    margin-top: 0;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    text-align: center;
+                }
+
+                ul {
+                    list-style: none;
+                    > li {
+                        font: 14px/2 $futura-light;
+                        margin-top: 12px;
+
+                        label {
+                            font-family: $futura-medium;
+                            display: inline-block;
+                            width: 30%;
+                        }
+                    }
+                }
+
+                span {
+                    display: inline-block;
+
+                }
+                input[type="text"],
+                select,
+                input[type="tel"] {
+                    display: none;
+                    width: 68%;
+                    border: 1px solid $border-grey;
+                    font: 16px/32px $futura-light;
+                    height: 32px;
+                    color: $text-dark-grey;
+                    padding-left: 5px;
+
+                }
+                .btn  {
+                    width: 200px;
+                }
+                input[type="submit"] {
+                    display: none;
+                }
+
+                /*input[type="button"], input[type="submit"] {
+                    border: 2px solid $light-blue;
+                    font: 18px/1.75 $futura-heavy;
+                    text-transform: uppercase;
+                    width: 32%;
+                    margin-top: 12px;
+                    letter-spacing: 1px;
+                    transition: all 0.3s;
+                }
+
+                input[type="button"] {
+                    background-color: $off-white;
+                    color: $light-blue;
+
+                    &:hover {
+                        box-shadow: inset 0 100px 0 0 $light-blue;
+                        color: $off-white;
+                    }
+                }
+
+                input[type="submit"] {
+                    display: none;
+                    background-color: $light-blue;
+                    color: $off-white;
+
+                    &:hover {
+                        box-shadow: inset 0 100px 0 0 $off-white;
+                        color: $light-blue;
+                    }
+                } */
+
+                &.edit span.edit {
+                    display: none;
+                }
+                &.edit input[type="text"],
+                &.edit select,
+                &.edit input[type="tel"] {
+                    display: inline-block;
+                }
+
+            }
+        }
+
+    }
+
+
+    div#orders {
+
+        p.support {
+            font: 16px/1.25 $futura-medium;
+            color: $text-mid-grey;
+            text-align: center;
+            margin: 36px 10px;
+        }
+
+        div.order {
+            margin-top: 20px;
+            padding: 2%;
+            background-color: $off-white;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            h3 {
+                font: 18px/1.75 $futura-heavy;
+                color: $text-mid-grey;
+            }
+
+            p {
+                font: 12px/1.75 $futura-light;
+            }
+
+            a {
+                text-decoration: none;
+                & > span {
+                    color: $light-blue;
+                    text-decoration: underline;
+                    font: 14px/1.75 $futura-light;
+                }
+            }
+
+            div:nth-child(1), div:nth-child(3) {
+                width: 50%;
+                align-self: flex-start;
+            }
+
+            div:nth-child(2) {
+                width: 100%;
+                order: 3;
+                align-self: flex-end;
+            }
+
+            div:nth-child(3) {
+                text-align: right;
+            }
+
+            .total {
+                font: 14px/1 $futura-light;
+                color: $text-mid-grey;
+                span {
+                    display: block;
+                    font: 16px $futura-heavy;
+                }
+            }
+
+
         }
     }
-    p {
-        margin-bottom: 0
+}
+
+
+// 400
+@media (min-width: $mobile) {
+    main.customer {
+        #account {
+            section {
+                .info_block {
+                    h3 {
+                        font-size: 20px;
+                    }
+                    ul {
+                        > li {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+        div#orders {
+            div.order {
+                h3 {
+                    font-size: 20px;
+                }
+                p {
+                    font-size: 16px;
+                }
+
+                a > span {
+                    font-size: 16px;
+                }
+
+                .total {
+                    font-size: 16px;
+                    span {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
     }
-    input[type=text], input[type=email], input[type=password], input[type=number] {
+}
+
+
+
+
+
+
+
+// 550
+@media (min-width: $mobile-wide) {
+    main.customer {
+
+        ul.tab {
+            height: 56px;
+            li {
+                a {
+                    font-size: 24px;
+                    line-height: 56px;
+                }
+            }
+        }
+
+        div#orders {
+
+            div.order {
+                flex-wrap: nowrap;
+                > div {
+                    width: auto;
+                }
+                div:nth-child(1) {
+                    width: auto;
+                    align-self: auto;
+                }
+                div:nth-child(2) {
+                    width: auto;
+                    order: 2;
+                    align-self: auto;
+                }
+                div:nth-child(3) {
+                    width: auto;
+                    order: 3;
+                    align-self: auto;
+                }
+            }
+        }
+    }
+}
+
+
+// 700
+@media (min-width: $tablet) {
+    main.customer {
+        .btn {
+
+        }
+        ul.tab {
+            font-size: 26px;
+            li {
+                margin-left: 4%;
+            }
+        }
+        #account {
+            section {
+                .info_block {
+                    width: 49%;
+                    &:nth-of-type(2) {
+                        margin-left: 2%;
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// 1000
+@media (min-width: $laptop) {
+
+    main.customer {
+        ul.tab {
+            li {
+                margin-left: 2%;
+            }
+        }
+
+        #account {
+            section {
+                flex-wrap: nowrap;
+                .info_block {
+                    width: 32%;
+                    float: left;
+
+                    &:nth-of-type(2), &:nth-of-type(3) {
+                        margin-left: 2%;
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*******************************
+ * ORDER DETAILS
+********************************/
+
+main.customer {
+    padding-top: 0;
+
+    ul.page-breadcrumbs {
+        color: $text-dark-grey;
+        font: 14px/1 $futura-medium;
+        text-transform: uppercase;
+        padding: 35px 0 50px 10px;
         width: 100%;
-        padding: 10px;
-        margin-bottom: 10px
+        list-style: none;
+        li {
+            float: left;
+            .slash {
+                padding: 0 10px;
+            }
+            a {
+                text-decoration: underline;
+                color: $light-blue;
+
+                &:hover {
+                    color: $hover-blue;
+                }
+            }
+        }
     }
-    input[type=submit] {
-        @include transition(all .5s ease);
-        margin-left: 0;
-        width: 100%
+
+    section#items {
+        article.order-number-and-status {
+            padding: 14px 10px;
+            font: 18px/1 "myriad-pro",sans-serif;
+            background: #f8f4ed;
+            margin-bottom: 20px;
+            h3 {
+                font: 18px/1 $futura-heavy;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                span.order-status {
+                    float: right;
+                }
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+        div.qty {
+            line-height: 31px;
+        }
+
     }
+
+
+
+    aside {
+        color: $text-dark-grey;
+        > h6 {
+            &:not(:first-of-type) {
+                margin-top: 20px;
+            }
+        }
+        p {
+            font: 14px/1.5 $futura-medium;
+        }
+    }
+
+
+    section.money {
+        p {
+            span {
+                float: right;
+            }
+            &.total {
+                font: 14px/1 $futura-medium;
+                border-top: 1px solid $text-mid-grey;
+                text-transform: uppercase;
+                font-weight: bold;
+                padding: 4% 2% 0 1%;
+                margin: 24px auto 22px;
+                max-width: 322px;
+                span {
+                    font: 24px $futura-medium;
+                    font-weight: inherit;
+                    font-size: 22px;
+                    position: relative;
+                    bottom: 7px;
+                }
+            }
+        }
+    }
+
+    section.address {
+        p {
+            line-height: 1.75;
+        }
+    }
+}
+
+
+
+/*******************************
+ * LOGIN AND PASSWORD RECOVERY
+********************************/
+main.has-form {
+    min-height: 550px;
+    padding-top: 25px;
+    color: $text-dark-grey;
+    h2 {
+        font: 37px/1 $futura-light;
+        border-bottom: 1px solid $text-light-grey;
+        margin: 27px auto 0;
+        letter-spacing: -1px;
+        font-weight: bold;
+        padding-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    section {
+        padding: 0;
+        article {
+            padding: 0 8%;
+            max-width: 500px;
+            margin: 0 auto;
+            h3 {
+                font: 32px/1 "myriad-pro-condensed",sans-serif;
+                border-bottom: 0;
+                font-weight: normal;
+                color: #000;
+                text-transform: uppercase;
+            }
+            label {
+                font: 14px/1 $futura-medium;
+                display: block;
+                width: 100%;
+                margin: 19px 0 3px;
+            }
+            div.login-links {
+                padding: 10px 0;
+                a {
+                    color: $light-blue;
+                    font: 16px/1.25 $futura-light;
+                    &:hover {
+                        color: $hover-blue;
+                    }
+                    &:first-child {
+                    }
+                    &:last-child {
+                        float: right;
+                    }
+                }
+            }
+            a.btn {
+                color: $text-white;
+                margin: 15px 0 0 0;
+                width: 200px;
+            }
+            p {
+                color: $text-dark-grey;
+                font: 16px/1.25 $futura-medium;
+            }
+        }
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"],
+    input[type="tel"],
     select {
-        padding: 10px;
-        display: block;
+        color: $text-dark-grey;
         width: 100%;
-        margin-bottom: 10px
+        border:1px solid $text-light-grey;
+        font: 14px/34px $futura-medium;
+        height: 34px;
+        padding-left: 5px;
     }
-    label.checkbox {
-        margin-top: 10px
-    }
+
     .errors {
-        background: $error-red;
-        padding: 10px;
+        background: darkred none repeat scroll 0 0;
         color: white;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        padding: 10px;
+        margin: 20px 0;
+        font: 16px/1 $futura-medium;
+        a {
+            color: white;
+            text-decoration: underline;
+        }
         ul {
             list-style: none;
-            margin-bottom: 0;
-            padding-left: 0
+            margin-bottom:0;
         }
     }
-    h2 {
-        font-size: 26px;
-        text-transform: uppercase
+    &.activate {
+
     }
-    h5 {
-        font-size: 18px;
-        text-transform: uppercase;
-        font-weight: 900
-    }
-    table {
-        max-width: 700px
-    }
-    a.submit {
-        margin-top: 20px;
-        margin-left: 0;
-        display: block;
-        text-align: center;
-        &:hover {
-            text-decoration: none
+}
+
+
+@media (min-width: $tablet) {
+    main.has-form {
+        h2 {
+            max-width: none;
+        }
+        section {
+            width: 40%;
+            article {
+                margin: 0;
+            }
         }
     }
 }
 
-#customer_login, #customer-wrapper #recover-password, #customer-wrapper #create_customer, #customer-wrapper #address_form_new {
-    label {
-        width: 100%
-    }
-    .note {
-        float: right;
-        font-weight: normal;
-        font-size: 12px;
-        color: $text-black;
-        &:before {
-            content: "* "
+
+
+/************************************
+ * NEW USER REGISTRATION
+*************************************/
+
+main.two-col {
+    /*h2 {
+        font-size: 22px;
+        max-width: 500px;
+        margin: 0 auto;
+    }*/
+    section {
+        padding: 0;
+        width: 60%;
+        article {
+            margin-top: 40px;
+            p {
+                font-size: 14px;
+            }
         }
     }
-    .small {
-        font-size: 12px;
-        font-weight: normal
+
+    article {
+        width: 90%;
+        &.lt-side {
+            padding: 0;
+            .btn {
+                margin-top: 25px;
+            }
+        }
+        &.rt-side {
+            padding: 0;
+            h3 {
+                margin: 0;
+                line-height: 1.5;
+            }
+            p {
+                color: $text-dark-grey;
+                line-height: 1.5;
+            }
+        }
     }
-    #forgot_password {
-        width: 100%;
+
+    p.required {
         text-align: right;
-        font-size: 12px;
-        margin-top: 5px;
-        a {
-            color: $text-black
+    }
+    .has-tooltip {
+        position: relative;
+    }
+
+    .tooltip {
+        display: none;
+        left: 0;
+        bottom: 60px;
+        background: #fff;
+        box-shadow: 1px 1px 5px 1px #e8e8e8;
+        padding: 20px;
+        border-bottom: 6px #9bb28f solid;
+        position: absolute;
+        .tool_arrow {
+            position: absolute;
+            top: 8px;
+            left: -19px;
+            display: none;
+        }
+        h4 {
+            text-transform: uppercase;
+            font: 20px/1.5 $futura-heavy;
+            color: $text-mid-grey;
+            white-space: nowrap;
+        }
+        p {
+            font: 14px/1.75 $futura-medium;
+            padding: 0 0 0 14px;
+            color: $text-mid-grey;
+            white-space: nowrap;
+        }
+        &:after {
+            background-image: url(https://media.firsttactical.com/is/image/FirstTactical/first-tactical-cvv-arrow-down.jpg?scl=1&fmt=png-alpha);
+            background-position: left bottom;
+            background-repeat: no-repeat;
+            bottom: -20px;
+            content: "";
+            height: 14px;
+            position: absolute;
+            width: 26px;
+        }
+    }
+    label {
+        .styledCheckbox {
+            display: inline-block;
+            float: left;
+            margin: 0 3px 0 0;
+            position:relative;
+            bottom: 3px;
         }
     }
 }
-#customer-wrapper {
-    .action_bottom {
-        margin-top: 20px
+main.two-forms section article{
+    h3 {
+        margin: 0 !important;
     }
-    .customer_info {
-        @include wrap-stuff;
-        #customer_sidebar {
-            @include transition(all .5s ease);
-            width: 100%
-        }
-        #customer_orders {
-            @include transition(all .5s ease);
-            width: 100%;
-            a {
-                color: $text-black;
-                font-weight: 900
-            }
+    &.lt-side {
+        border-right: none;
+    }
+    &.rt-side {
+        @media (min-width: $tablet) {
+            border-left: 1px solid #ccc;
         }
     }
-    .cancelled {
-        width: 100%;
-        background: $error-red;
-        padding: 13px;
-        color: white;
-        margin-top: 10px;
-        h5 {
-            margin-top: 0
-        }
-    }
-    #order_address {
-        @include wrap-stuff;
-        margin-top: 10px;
-        h5 {
-            margin-top: 0
-        }
-        #order_payment, #order_shipping {
-            @include transition(all .5s ease);
-            width: 100%;
-            margin-bottom: 20px
-        }
-    }
-    table#order_details {
-        max-width: 100%;
-        margin-top: 10px;
-        tbody {
-            border-bottom: 1px solid $medium-grey
-        }
-        a {
-            color: $text-black;
-            font-weight: 900
-        }
+
+}
+
+
+// 400
+@media (min-width: $mobile) {
+    main.two-col {
+        /*h2 {
+            font-size: 26px;
+        }*/
     }
 }
 
-@media(min-width:$mobile-wide) {
-    .cancelled {
-        width: calc(50% - 10px) !important
-    }
-    #order_address {
-        #order_payment, #order_shipping {
 
-            margin-bottom: 0;
-            width: calc(50% - 10px) !important;
-            margin-right: 10px;
-            border: 1px solid $medium-grey;
-            padding: 10px
-        }
-        #order_shipping {
-            margin-right: 0;
-            margin-left: 10px
-        }
-    }
-}
 
-@media(min-width:$tablet) {
-    .customer_info {
-        #customer_sidebar {
-            width: calc(40% - 10px) !important;
-            margin-right: 10px
+
+
+// 700
+@media (min-width: $tablet) {
+    main.two-col {
+        h2 {
+            max-width: none;
         }
-        #customer_orders {
-            width: calc(60% - 10px) !important;
-            margin-left: 10px
-        }
-    }
-    #customer-wrapper {
-        #customer_login, #recover-password, #create_customer, #address_form_new {
+        section {}
+        article {
             width: 50%;
-            input[type=submit] {
-                width: 50%
+        }
+        article.lt-side {
+            float: left;
+            border-right: 1px solid $text-light-grey;
+            padding-right: 8%;
+        }
+        article.rt-side {
+            float: right;
+            padding-left: 8%;
+        }
+        .tooltip {
+            border-bottom: 0;
+            border-left: 6px #9bb28f solid;
+            bottom: auto;
+            top: 0;
+            left: 100%;
+            margin-left: 10px;
+
+            .tool_arrow {
+                display: block;
+            }
+
+            &:after {
+                display: none;
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+// 1000
+@media (min-width: $laptop) {
+    main.two-col {
+        /* section {
+            padding: 0 100px;
+        } */
+        article.lt-side {
+            padding: 0 8%;
+        }
+        article.rt-side {
+            padding: 0 8%;
+        }
+    }
+
+}
+
+
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1; /* ie 6/7 */
+}
+
+
+
+
+
+/********************************
+ * CUSTOMER CONTACT US
+*********************************/
+
+main.contact-us {
+    section {
+        .lt-side {
+            p {
+                color: $text-mid-grey;
+                line-height: 1.5;
+            }
+            p.required {
+                position: relative;
+                top: 16px;
+            }
+            input[type="submit"] {
+                width: 150px;
+            }
+        }
+    }
+
+    #contactFormMessage {
+        width: 100%;
+        padding: 10px;
+        height: 200px;
+        color: #222;
+        font: 14px/1.25 $futura-medium;
+        resize: none;
+        background: $white;
+        outline: 1px solid $text-light-grey;
+    }
+    article {
+        &.rt-side {
+            h3 {
+                &:nth-of-type(2),
+                &:nth-of-type(3) {
+                    margin-top:40px;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+/********************************
+ * START NEWSLETTER SIGNUP
+*********************************/
+$error: #ec6c6c;
+main.newsletter {
+    section {
+        p.desc {
+            font: 14px/1.5 $futura-light;
+            color: $text-dark-grey;
+            margin: 32px auto 0;
+            max-width: 500px;
+        }
+    }
+    .lt-side {
+        position: relative;
+        p.required {
+            float: right;
+        }
+    }
+    .radio-div {
+        padding-top: 6px;
+        label {
+            float:left;
+            display: inline-block;
+            margin: 0 15px 0 0;
+            width: auto;
+
+            .styledRadio {
+                display: inline-block;
+                float: left;
+                margin: 0 3px 0 0;
+                position:relative;
+                bottom: 3px;
+            }
+        }
+    }
+    .error {
+        label,
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            border-color: $error;
+            color: $error;
+        }
+    }
+    .btn-row {
+        clear: both;
+        padding: 40px 0 0 0;
+        text-align: center;
+
+        .btn {
+            max-width: 200px;
+            margin: 0 auto;
+            color: $text-white;
+            font-family: $futura-heavy;
+        }
+    }
+}
+
+@media (min-width: $tablet) {
+    main.newsletter {
+        section {
+            p.desc {
+                max-width: none;
             }
         }
     }
 }
 
-@media(min-width:$wrapper) {
-    #customer-wrapper {
-        width: 100%;
-        margin: 0
+
+/********************************
+ * END NEWSLETTER SIGNUP
+*********************************/
+
+
+
+/********************************
+ * START FAQ
+*********************************/
+main.faq {
+    ul.tab li > a {
+        font-size: 15px;
+    }
+    .tab-content {
+        padding: 40px 2% 0;
+        h2 {
+            font: 25px/1.5 $futura-light;
+            color: $text-mid-grey;
+            margin: 25px 0 10px;
+        }
+        ul {
+            > li {
+                position: relative;
+                padding-left: 24px;
+                .tcon {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+                .tcon-plus {
+                    height: 16px;
+                    width: 16px;
+                }
+            }
+        }
+        .question {
+            font: 14px/1.25 $futura-heavy;
+            color: $text-mid-grey;
+            cursor: pointer;
+            margin: 8px 0 0;
+            text-transform: initial;
+        }
+        p {
+            color: $text-mid-grey;
+            font: 14px/1.75 $futura-medium;
+            &.answer {
+                padding-bottom: 10px;
+            }
+            a {
+                text-decoration: underline;
+                color: $text-dark-grey;
+                &:hover {
+                    color: $hover-blue;
+                    text-decoration: none;
+                }
+            }
+        }
     }
 }
+
+@media (min-width: $mobile) {
+    main.faq {
+        ul.tab li > a {
+            font-size: 19px;
+        }
+    }
+}
+
+@media (min-width: 550px) {
+    main.faq {
+        ul.tab li a {
+            font-size: 24px;
+            line-height: 56px;
+        }
+    }
+}
+
+
+/********************************
+ * END FAQ
+*********************************/
